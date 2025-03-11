@@ -15,7 +15,7 @@ dockitems_persist: []
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
 
-configure_sudoers: true
+configure_sudoers: false
 sudoers_custom_config: |
   # Allow users in admin group to use sudo with no password.
   %admin ALL=(ALL) NOPASSWD: ALL
@@ -37,7 +37,7 @@ dotfiles_files:
 
 # Whether to upgrade homebrew and all packages installed by homebrew.
 # If you prefer to manually update packages via brew commands, leave this set to false.
-homebrew_upgrade_all_packages: true
+homebrew_upgrade_all_packages: false
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
@@ -102,8 +102,13 @@ osx_script: "~/.osx --no-restart"
 # - name: bundler
 #   state: present # present/absent/latest, default: present
 #   version: "~> 1.15.1" # default: N/A
-npm_packages: []
+npm_packages:
 # - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+  - name: claude
+    state: latest
+    # version: "^1.0.0"
 #   state: present # present/absent/latest, default: present
 #   version: "^2.6" # default: N/A
 pip_packages: []
