@@ -1,10 +1,10 @@
 ---
 configure_dotfiles: true
+configure_sudoers: false
 configure_terminal: false
 configure_osx: false
+configure_dock: false # true to configure the Dock via dockutil.
 
-# Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
 dockitems_remove: []
 # - Launchpad
 # - TV
@@ -15,16 +15,19 @@ dockitems_persist: []
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
 
-configure_sudoers: false
+### Sudoers ###
 sudoers_custom_config: |
   # Allow users in admin group to use sudo with no password.
   %admin ALL=(ALL) NOPASSWD: ALL
 
+### Dotfiles ###
 dotfiles_repo: ~/Development/dotfiles.macos/.git
 dotfiles_repo_version: main
 dotfiles_repo_accept_hostkey: false
 dotfiles_repo_local_destination: ~/.config/dotfiles
 dotfiles_files:
+  - .aliases
+  - .environment
   - .zshrc
   - .gitignore
   - .inputrc
@@ -41,51 +44,80 @@ homebrew_upgrade_all_packages: false
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
+  - awscli
   - bash-completion
+  - bison
+  - bun
+  - codex
+  - gemini-cli
   - gh
   - git
   - go
   - gpg
   - htop
+  - ipcalc
   - iperf
   - libevent
+  - mas
+  - meson
+  - ninja
   - nmap
   - node
   - nvm
   - openssl
+  - orbstack
+  - pnpm
   - php
   - readline
+  - repomix
   - ripgrep
   - rustup
+  - sgpt
   - sqlite
   - ssh-copy-id
+  - telnet
   - uv
   - wget
   - zsh-history-substring-search
 homebrew_uninstalled_packages:
   - pv
 
-homebrew_taps: []
+homebrew_taps: 
+  - tbckr/tap
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - bitwarden
+  - anydesk
+  - blackhole-16ch
+  - chromium
+  - claude-code
+  - companion-satellite
   - firefox
   - font-jetbrains-mono-nerd-font
+  - github
   - handbrake
-  - pearcleaner
+  - IINA
+  - mpv
   - mullvadvpn
   - obs
+  - obsidian
+  - parsec
+  - pearcleaner
+  - qlmarkdown
+  - quicklook-json
   - visual-studio-code
-  - wezterm
+  - vlc
+  - wezterm@nightly
   - zed@preview
 homebrew_cask_uninstalled_apps:
   - docker
-  - google-chrome
   - dropbox
+  - google-chrome
+  - wifiman
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_installed_apps: 
+  - { id: 1352778147, name: "Bitwarden" }
 mas_email: ""
 mas_password: ""
 

@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../dotfiles.macos"
+		},
+		{
+			"path": "../../.config/wezterm"
 		}
 	],
 	"settings": {}

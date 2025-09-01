@@ -4,5 +4,5 @@ Built using the [geerlingguy.mac ansible collection](https://galaxy.ansible.com/
 Tested using an M4 MBP running 15.2
 
 ```zsh
-ansible-playbook main.yml -vv
+ansible-playbook main.yml -v
 ```
