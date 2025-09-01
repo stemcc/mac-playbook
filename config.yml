@@ -45,7 +45,6 @@ homebrew_upgrade_all_packages: false
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - awscli
-  - bash-completion
   - bison
   - bun
   - codex
@@ -82,6 +81,7 @@ homebrew_installed_packages:
   - zsh-history-substring-search
 homebrew_uninstalled_packages:
   - pv
+  - bash-completion
 
 homebrew_taps: 
   - tbckr/tap
